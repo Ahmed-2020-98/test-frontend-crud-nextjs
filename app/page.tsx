@@ -33,8 +33,8 @@ export default function Home() {
       }
     } catch (error) {
       console.error('Error fetching students:', error);
-      // عرض رسالة خطأ للمستخدم
-      alert('خطأ في الاتصال بالخادم. تأكد من أن Laravel يعمل على المنفذ 8000');
+      console.error('API URL used:', API_URL);
+      alert(`خطأ في الاتصال بالخادم.\nالرابط المستخدم: ${API_URL}\n\nتفاصيل الخطأ: ${error instanceof Error ? error.message : 'خطأ غير معروف'}`);
     } finally {
       setLoading(false);
     }
